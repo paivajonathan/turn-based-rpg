@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtvwnksp5miwa"]
+
+[ext_resource type="Script" uid="uid://cekhevld5tl2m" path="res://player_window.gd" id="1_or4yj"]
+
+[node name="PlayerWindow" type="Button"]
+custom_minimum_size = Vector2(57, 77)
+offset_right = 57.0
+offset_bottom = 77.0
+script = ExtResource("1_or4yj")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="PName" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "PNAME"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HP" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "HP:"
+
+[node name="HPValue" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "???"
+horizontal_alignment = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MP" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "MP:"
+
+[node name="MPValue" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "???"
+horizontal_alignment = 2

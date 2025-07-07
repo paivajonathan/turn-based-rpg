@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BattleActor" load_steps=2 format=3 uid="uid://bljkqcwlrvsb5"]
+
+[ext_resource type="Script" uid="uid://bp7nfgpum348d" path="res://battle_actor.gd" id="1_a72d1"]
+
+[resource]
+script = ExtResource("1_a72d1")
+name = "Mister Moustache"
+hp_max = 5
+mp_max = 0
+metadata/_custom_type_script = "uid://bp7nfgpum348d"

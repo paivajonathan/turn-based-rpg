@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BattleActor" load_steps=2 format=3 uid="uid://bohegb46s5ujd"]
+
+[ext_resource type="Script" uid="uid://bp7nfgpum348d" path="res://battle_actor.gd" id="1_xfjqr"]
+
+[resource]
+script = ExtResource("1_xfjqr")
+name = "George"
+hp_max = 48
+mp_max = 16
+metadata/_custom_type_script = "uid://bp7nfgpum348d"
