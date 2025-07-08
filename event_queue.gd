@@ -2,8 +2,9 @@ class_name EventQueue extends Node
 
 enum Actions {
 	FIGHT,
-	DEFEND,
+	DEFENSE,
 	ITEM,
+	RUN,
 }
 
 var events: Array[Dictionary] = []
@@ -18,6 +19,8 @@ func pop_back() -> void:
 func run() -> void:
 	# Base case
 	if events.is_empty():
+		for actor in Data.party:
+			actor.change_defense(false)
 		return
 	
 	var event: Dictionary = events.pop_front()
@@ -31,7 +34,9 @@ func run() -> void:
 	match event.action:
 		Actions.FIGHT:
 			target.healhurt(-1)
-		_:
+		Actions.DEFENSE:
+			actor.change_defense(true)
+			#_:
 			pass
 			
 	await(get_tree().create_timer(0.5).timeout)

@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_54wtm")
 name = "Tampopo"
-hp_max = 32
+hp_max = 1
 mp_max = 0
 metadata/_custom_type_script = "uid://bp7nfgpum348d"

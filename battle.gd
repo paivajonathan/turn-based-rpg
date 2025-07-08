@@ -53,9 +53,16 @@ func _on_options_button_pressed(button: BaseButton, _index: int) -> void:
 	match button.text:
 		"Fight":
 			action = Actions.FIGHT
+			print("Ação escolhida: Fight")
 			enemies.button_focus()
+		"Defense":
+			action = Actions.DEFENSE
+			print("Ação escolhida: Defense")
+			var actor: BattleActor = Data.party[current_player_index]
+			event_queue.add(action, actor, actor)
+			goto_next_player()
 		_:
-			print("No")
+			print("Ação desconhecida! Texto do botão: ", button.text)
 
 
 func _on_enemies_button_pressed(button: BaseButton, index: int) -> void:

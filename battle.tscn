@@ -52,8 +52,7 @@ text = "Fight"
 
 [node name="Button2" type="Button" parent="MarginContainer/Options/VBoxContainer"]
 layout_mode = 2
-text = "Item
-"
+text = "Defense"
 
 [node name="Button3" type="Button" parent="MarginContainer/Options/VBoxContainer"]
 layout_mode = 2

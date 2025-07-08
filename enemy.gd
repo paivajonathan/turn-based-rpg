@@ -2,7 +2,7 @@ class_name Enemy extends TextureButton
 
 @export var data: BattleActor = null :
 	set(value):
-		data = value.copy()
+		data = value
 		data.hp_changed.connect(_on_data_hp_changed)
 		# TODO update sprite
 		# etc
