@@ -43,7 +43,7 @@ func healhurt(value: int, is_npc:bool = false) -> void:
 		if coeficiente % 2 == 0:
 			ataque_valido = true
 		else:
-			print("Jogador errou o ataque!")
+			print("Player errou o ataque!",)
 
 	if ataque_valido:
 		if not defense:

@@ -11,7 +11,8 @@ func _ready() -> void:
 func setup_enemies() -> void:
 	enemies.clear()
 	for i in range(3):
-		var enemy = preload("res://Enemies/mister_moustache.tres").duplicate()
+		var base_enemy = preload("res://Enemies/mister_moustache.tres").duplicate(true)
+		var enemy = base_enemy.copy()
 		enemy.name = "Mister Moustache %d" % (i+1)
 		enemy.hp_max = 1
 		enemy.hp = 1
