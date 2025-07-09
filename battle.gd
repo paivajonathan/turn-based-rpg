@@ -12,7 +12,25 @@ var current_player_index: int = -1
 
 func _ready() -> void:
 	print("INICIADO")
+	Data.setup_enemies()
+	setup_enemy_buttons()
 	goto_next_player()
+
+func setup_enemy_buttons() -> void:
+	var enemy_actors = Data.enemies
+	var enemy_buttons = enemies.get_buttons()
+	
+	for i in range(enemy_buttons.size()):
+		if i >= enemy_actors.size():
+			enemy_buttons[i].hide() # caso tenha mais botões que inimigos
+			continue
+		
+		var actor: BattleActor = enemy_actors[i]
+		var button: Enemy = enemy_buttons[i]
+		
+		button.data = actor
+		button.disabled = false
+		button.show()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
@@ -32,12 +50,15 @@ func goto_next_player(dir: int = 1) -> void:
 	if current_player_index >= Data.party.size():
 		for enemy in enemies.get_buttons():
 			var actor: BattleActor = enemy.data
+			if actor.hp <= 0:
+				print(actor.name, " está morto e não pode atacar.")
+				continue #npc is dead - next!
 			var target: BattleActor = event_queue.pick_random_alive(Data.party)
 			if target != null: #npc turn
 				event_queue.add(Actions.FIGHT, actor, target, true)
 		
-		options.hide()
-		enemies.release()
+		#options.hide()
+		#enemies.release()
 		player_windows.activate(-1)
 		
 		# TODO sort by speed rolls

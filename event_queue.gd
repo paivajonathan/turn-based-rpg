@@ -48,6 +48,7 @@ func run() -> void:
 			else:
 				print("Jogador %s está atacando %s" % [actor.name, target.name])
 			target.healhurt(-1, is_npc)
+			get_parent().enemies.update_buttons()
 
 		Actions.DEFENSE:
 			actor.change_defense(true)

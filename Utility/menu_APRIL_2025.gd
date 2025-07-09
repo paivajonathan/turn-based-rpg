@@ -304,3 +304,9 @@ func _on_closed() -> void:
 	
 	if tree:
 		tree.back().button_focus()
+
+func update_buttons():
+	for button in get_buttons():
+		var actor: BattleActor = button.data
+		if actor.hp <= 0:
+			button.disabled = true
