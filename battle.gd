@@ -41,8 +41,19 @@ func goto_next_player(dir: int = 1) -> void:
 		
 		# TODO sort by speed rolls
 		await(event_queue.run())
+		
+		#if all_players_dead():
+			#print("Game Over")
+			#get_tree().quit()
+		#elif all_enemies_dead():
+			#print("Fim de Jogo")
+			#get_tree().quit()
 		current_player_index = 0
-	
+		
+	if Data.party[current_player_index].hp <= 0:
+		goto_next_player()
+		return
+		
 	action = -1
 	print(current_player_index)
 	player_windows.activate(current_player_index)
@@ -71,3 +82,16 @@ func _on_enemies_button_pressed(button: BaseButton, index: int) -> void:
 	event_queue.add(action, actor, target)
 	print(target.name, " HP: ", target.hp)
 	goto_next_player()
+	
+func all_players_dead() -> bool:
+	for player in Data.party:
+		if player.hp > 0:
+			return false
+	return true
+
+func all_enemies_dead() -> bool:
+	for enemy_button in enemies.get_buttons():
+		var enemy = enemy_button.data
+		if enemy.hp > 0:
+			return false
+	return true

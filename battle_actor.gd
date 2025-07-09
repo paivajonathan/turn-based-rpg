@@ -24,14 +24,31 @@ func copy() -> BattleActor:
 func change_defense(value: bool) -> void:
 	defense = value
 
-func healhurt(value: int) -> void:
-	if not defense:
-		var previous_hp: int = hp
-		hp += value
-		hp = clampi(hp, 0, hp_max)
-		hp_changed.emit(hp, hp_max, previous_hp - hp)
-		print(name, " sofreu dano! HP agora: ", hp)
-		print(name, " ", hp)
+func healhurt(value: int, is_npc:bool = false) -> void:
+	var rng := RandomNumberGenerator.new()
+	var coeficiente = rng.randi_range(1,20) #aleatoriedade de um dado de 20 lados
+	
+	var ataque_valido := false
+	if is_npc:
+		# NPC só acerta se for PAR e < 10
+		if coeficiente % 2 == 0 and coeficiente < 10:
+			ataque_valido = true
+		else:
+			print("NPC errou o ataque!")
 	else:
-		print(name, " está protegido! Nenhum dano recebido")
+		# Jogador acerta se for PAR
+		if coeficiente % 2 == 0:
+			ataque_valido = true
+		else:
+			print("Jogador errou o ataque!")
+
+	if ataque_valido:
+		if not defense:
+			var previous_hp: int = hp
+			hp += value
+			hp = clampi(hp, 0, hp_max)
+			hp_changed.emit(hp, hp_max, previous_hp - hp)
+			print(name, " sofreu dano! HP agora: ", hp)
+		else:
+			print(name, " está protegido! Nenhum dano recebido")
 	
