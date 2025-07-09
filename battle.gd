@@ -47,7 +47,12 @@ func _input(event: InputEvent) -> void:
 func goto_next_player(dir: int = 1) -> void:
 	current_player_index += dir
 	
+	if all_players_dead():
+		print("Game Over! Você morreu")
+		return
+	
 	if current_player_index >= Data.party.size():
+		# Adiciona os NPCs já aqui, antes de rodar os eventos
 		for enemy in enemies.get_buttons():
 			var actor: BattleActor = enemy.data
 			if actor.hp <= 0:
@@ -62,16 +67,17 @@ func goto_next_player(dir: int = 1) -> void:
 		player_windows.activate(-1)
 		
 		# TODO sort by speed rolls
-		await(event_queue.run())
+		await event_queue.run() # roda jogadores + NPCs no mesmo “turno”
 		
-		#if all_players_dead():
-			#print("Game Over")
-			#get_tree().quit()
-		#elif all_enemies_dead():
-			#print("Fim de Jogo")
-			#get_tree().quit()
+		if all_players_dead():
+			print("Game Over! Você morreu")
+			return
+		elif all_enemies_dead():
+			print("Fim de Jogo! Você venceu!")
+			return
+		
 		current_player_index = 0
-		
+	
 	if Data.party[current_player_index].hp <= 0:
 		goto_next_player()
 		return
