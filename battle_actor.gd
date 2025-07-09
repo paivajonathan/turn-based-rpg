@@ -30,8 +30,11 @@ func healhurt(value: int, is_npc:bool = false) -> void:
 	
 	var ataque_valido := false
 	if is_npc:
+		const NPC_DIFFICULTY_THRESHOLD = 10
+		var npc_threshold := NPC_DIFFICULTY_THRESHOLD
+		print("NPC rolou: ", coeficiente, " (precisa ser PAR e < ", npc_threshold, ")")
 		# NPC só acerta se for PAR e < 10
-		if coeficiente % 2 == 0 and coeficiente < 10:
+		if coeficiente % 2 == 0 and coeficiente < npc_threshold:
 			ataque_valido = true
 		else:
 			print("NPC errou o ataque!")
