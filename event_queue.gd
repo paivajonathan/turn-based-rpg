@@ -55,3 +55,12 @@ func run() -> void:
 			
 	await(get_tree().create_timer(0.5).timeout)
 	await(run())
+	
+func pick_random_alive(party) -> BattleActor: #only alive players
+	var alive_party: Array = []
+	for actor in party:
+		if actor.hp > 0:
+			alive_party.append(actor)
+	if alive_party.is_empty():
+		return null # ou trate como quiser
+	return alive_party[randi() % alive_party.size()]

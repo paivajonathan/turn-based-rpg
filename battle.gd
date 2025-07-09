@@ -32,8 +32,9 @@ func goto_next_player(dir: int = 1) -> void:
 	if current_player_index >= Data.party.size():
 		for enemy in enemies.get_buttons():
 			var actor: BattleActor = enemy.data
-			var target: BattleActor = Data.party.pick_random()
-			event_queue.add(Actions.FIGHT, actor, target)
+			var target: BattleActor = event_queue.pick_random_alive(Data.party)
+			if target != null:
+				event_queue.add(Actions.FIGHT, actor, target)
 		
 		options.hide()
 		enemies.release()
