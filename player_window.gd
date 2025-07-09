@@ -5,7 +5,6 @@ var tween: Tween = null
 @onready var start_y: float = position.y
 @onready var p_name: Label = $PanelContainer/VBoxContainer/PName
 @onready var hp_value: Label = $PanelContainer/VBoxContainer/HBoxContainer/HPValue
-@onready var mp_value: Label = $PanelContainer/VBoxContainer/HBoxContainer2/MPValue
 
 var data: BattleActor = null:
 	set(value):
@@ -16,7 +15,6 @@ var data: BattleActor = null:
 			data.hp_changed.connect(_on_data_hp_changed)
 			p_name.text = data.name.erase(8, 99)
 			hp_value.text = str(data.hp)
-			mp_value.text = str(data.mp)
 			show()
 		else:
 			hide()

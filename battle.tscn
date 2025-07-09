@@ -59,14 +59,6 @@ text = "Fight"
 layout_mode = 2
 text = "Defense"
 
-[node name="Button3" type="Button" parent="MarginContainer/Options/VBoxContainer"]
-layout_mode = 2
-text = "Magic"
-
-[node name="Button4" type="Button" parent="MarginContainer/Options/VBoxContainer"]
-layout_mode = 2
-text = "Run"
-
 [node name="PlayerWindows" parent="MarginContainer" instance=ExtResource("3_i431l")]
 layout_mode = 2
 
