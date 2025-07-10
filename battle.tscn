@@ -96,5 +96,20 @@ data = ExtResource("6_dw4jg")
 layout_mode = 2
 data = ExtResource("6_dw4jg")
 
+[node name="GameOverLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.22408
+anchor_top = -0.00711744
+anchor_right = -0.22408
+anchor_bottom = -0.00711744
+offset_left = 131.0
+offset_top = 1.0
+offset_right = 171.0
+offset_bottom = 24.0
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [connection signal="button_pressed" from="MarginContainer/Options" to="." method="_on_options_button_pressed"]
 [connection signal="button_pressed" from="Enemies" to="." method="_on_enemies_button_pressed"]

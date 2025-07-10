@@ -9,6 +9,8 @@ var current_player_index: int = -1
 @onready var enemies: Menu = $Enemies
 @onready var player_windows: PlayerWindows = $MarginContainer/PlayerWindows
 @onready var event_queue: EventQueue = $EventQueue
+@onready var game_over_label: Label = $GameOverLabel
+
 
 func _ready() -> void:
 	print("INICIADO")
@@ -71,9 +73,11 @@ func goto_next_player(dir: int = 1) -> void:
 		
 		if all_players_dead():
 			print("Game Over! Você morreu")
+			show_game_over("Game Over! Você morreu")
 			return
 		elif all_enemies_dead():
 			print("Fim de Jogo! Você venceu!")
+			show_game_over("Fim de Jogo! Você venceu!")
 			return
 		
 		current_player_index = 0
@@ -123,3 +127,10 @@ func all_enemies_dead() -> bool:
 		if enemy.hp > 0:
 			return false
 	return true
+	
+func show_game_over(message: String) -> void:
+	game_over_label.text = message
+	game_over_label.show()
+	options.hide()
+	enemies.hide()
+	player_windows.hide()
