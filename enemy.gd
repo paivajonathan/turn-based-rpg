@@ -10,7 +10,7 @@ class_name Enemy extends TextureButton
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
-	animation_player.play("RESET")
+	start_idle()
 
 
 func _on_focus_entered() -> void:
@@ -20,8 +20,19 @@ func _on_focus_entered() -> void:
 
 func _on_focus_exited() -> void:
 	print("Sem highlight")
-	animation_player.play("RESET")
+	start_idle()
 	
 func _on_data_hp_changed(hp: int, hp_max: int, value_change: int) -> void:
 	if hp <= 0:
 		hide()
+	else:
+		start_idle()
+		
+func start_idle() -> void:
+	# toca a animação idle em loop
+	if not animation_player.is_playing() or animation_player.current_animation != "idle":
+		animation_player.play("idle")
+
+func stop_idle() -> void:
+	if animation_player.is_playing():
+		animation_player.stop()
