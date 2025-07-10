@@ -60,7 +60,7 @@ func goto_next_player(dir: int = 1) -> void:
 				continue #npc is dead - next!
 			var target: BattleActor = event_queue.pick_random_alive(Data.party)
 			if target != null: #npc turn
-				event_queue.add(Actions.FIGHT, actor, target, true)
+				event_queue.add(Actions.FIRE, actor, target, true)
 		
 		#options.hide()
 		#enemies.release()
@@ -90,13 +90,13 @@ func goto_next_player(dir: int = 1) -> void:
 
 func _on_options_button_pressed(button: BaseButton, _index: int) -> void:
 	match button.text:
-		"Fight":
-			action = Actions.FIGHT
-			print("Ação escolhida: Fight")
+		"Fire":
+			action = Actions.FIRE
+			print("Ação escolhida: Fire")
 			enemies.button_focus()
-		"Defense":
-			action = Actions.DEFENSE
-			print("Ação escolhida: Defense")
+		"Shield":
+			action = Actions.SHIELD
+			print("Ação escolhida: Shield")
 			var actor: BattleActor = Data.party[current_player_index]
 			event_queue.add(action, actor, actor)
 			goto_next_player()

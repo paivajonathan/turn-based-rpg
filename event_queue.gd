@@ -1,10 +1,8 @@
 class_name EventQueue extends Node
 
 enum Actions {
-	FIGHT,
-	DEFENSE,
-	ITEM,
-	RUN,
+	FIRE,
+	SHIELD,
 }
 
 var events: Array[Dictionary] = []
@@ -42,7 +40,7 @@ func run() -> void:
 	print(">> Executando evento: ", actor.name, " vai ", Actions.keys()[action], " em ", target.name)
 	
 	match action:
-		Actions.FIGHT:
+		Actions.FIRE:
 			if is_npc:
 				print("NPC %s está atacando %s" % [actor.name, target.name])
 			else:
@@ -50,7 +48,7 @@ func run() -> void:
 			target.healhurt(-1, is_npc)
 			get_parent().enemies.update_buttons()
 
-		Actions.DEFENSE:
+		Actions.SHIELD:
 			actor.change_defense(true)
 			print("%s está se defendendo!" % actor.name)
 			
