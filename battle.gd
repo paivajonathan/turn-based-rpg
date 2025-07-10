@@ -35,6 +35,15 @@ func setup_enemy_buttons() -> void:
 		button.show()
 
 func _input(event: InputEvent) -> void:
+	if game_over_label.visible:
+		# se o jogo acabou, só aceita Enter ou Esc
+		if event.is_action_pressed("ui_accept"):
+			get_tree().reload_current_scene()
+		elif event.is_action_pressed("ui_cancel"):
+			get_tree().quit()
+		return
+	
+	# código normal para cancelar turnos
 	if event.is_action_pressed("ui_cancel"):
 		if current_player_index > 0 and options.menu_is_focused():
 			print("CURRENT PLAYER INDEX AND OPTIONS FOCUSED")
