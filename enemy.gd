@@ -20,6 +20,7 @@ func _on_focus_entered() -> void:
 
 func _on_focus_exited() -> void:
 	print("Sem highlight")
+	animation_player.stop()
 	start_idle()
 	
 func _on_data_hp_changed(hp: int, hp_max: int, value_change: int) -> void:
