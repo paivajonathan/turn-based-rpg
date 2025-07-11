@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bbflpihvep531"
+path="res://.godot/imported/♬-Golden Brown X Love Story-(Slowed)-♬.mp3-be41db77559ff3d9baff6d644c8f3f48.mp3str"
+
+[deps]
+
+source_file="res://music/♬-Golden Brown X Love Story-(Slowed)-♬.mp3"
+dest_files=["res://.godot/imported/♬-Golden Brown X Love Story-(Slowed)-♬.mp3-be41db77559ff3d9baff6d644c8f3f48.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
