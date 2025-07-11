@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdu7rcwvujfdp"]
+
+[ext_resource type="AudioStream" uid="uid://bbflpihvep531" path="res://music/♬-Golden Brown X Love Story-(Slowed)-♬.mp3" id="1_b53cj"]
+
+[node name="BGMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_b53cj")
+autoplay = true

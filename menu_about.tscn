@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://oguw5p6hcxer"]
 
 [ext_resource type="Texture2D" uid="uid://datukiuyxy3my" path="res://Art/helelBg.png" id="1_iejn4"]
-[ext_resource type="Script" uid="uid://c2hd1ld1y3iqr" path="res://font/about_menu.gd" id="2_0g7e6"]
+[ext_resource type="Script" uid="uid://c2hd1ld1y3iqr" path="res://about_menu.gd" id="2_0g7e6"]
 [ext_resource type="Theme" uid="uid://dupwm4k1lvh6a" path="res://font/hele_theme.tres" id="3_7dk7o"]
 
 [sub_resource type="Animation" id="Animation_ewp1v"]

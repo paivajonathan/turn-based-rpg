@@ -15,7 +15,7 @@ func _on_button_opcao_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_button_sobre_pressed() -> void:
-	get_tree().change_scene_to_file("res://font/menu_about.tscn")
+	get_tree().change_scene_to_file("res://menu_about.tscn")
 
 func _on_button_sair_pressed() -> void:
 	get_tree().quit()
