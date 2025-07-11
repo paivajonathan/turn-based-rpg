@@ -14,11 +14,9 @@ class_name Enemy extends TextureButton
 func _ready() -> void:
 	start_idle()
 
-
 func _on_focus_entered() -> void:
 	print("Highlight")
 	animation_player.play("highlight")
-
 
 func _on_focus_exited() -> void:
 	print("Sem highlight")
