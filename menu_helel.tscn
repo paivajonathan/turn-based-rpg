@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://btpchjlawl8yh"]
+[gd_scene load_steps=8 format=3 uid="uid://btpchjlawl8yh"]
 
 [ext_resource type="Texture2D" uid="uid://datukiuyxy3my" path="res://Art/helelBg.png" id="1_em0u6"]
 [ext_resource type="Script" uid="uid://caplixofmfi6q" path="res://texture_menu.gd" id="2_ewp1v"]
+[ext_resource type="FontFile" uid="uid://kvrnkau14mt4" path="res://font/Metropolitan.ttf" id="3_cpb1u"]
 
 [sub_resource type="Animation" id="Animation_em0u6"]
 resource_name = "loop"
@@ -41,6 +42,14 @@ _data = {
 &"RESET": SubResource("Animation_ewp1v"),
 &"loop": SubResource("Animation_em0u6")
 }
+
+[sub_resource type="Theme" id="Theme_4f8hd"]
+Label/colors/font_color = Color(1, 0.250003, 0.134874, 1)
+Label/colors/font_outline_color = Color(0.564686, 0.00718601, 1.44392e-07, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/outline_size = 10
+Label/font_sizes/font_size = 57
+Label/fonts/font = null
 
 [node name="CanvasGroup" type="CanvasLayer"]
 
@@ -93,6 +102,27 @@ text = "Jogar"
 layout_mode = 2
 text = "Opções"
 
+[node name="ButtonSobre" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Sobre"
+
 [node name="ButtonSair" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 text = "Sair"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -158.0
+offset_top = -25.0
+offset_right = 161.0
+offset_bottom = 101.0
+grow_horizontal = 2
+theme = SubResource("Theme_4f8hd")
+theme_type_variation = &"HeaderLarge"
+theme_override_fonts/font = ExtResource("3_cpb1u")
+text = "HELEL"
+horizontal_alignment = 1
+vertical_alignment = 1
