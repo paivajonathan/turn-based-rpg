@@ -18,8 +18,6 @@ func _ready() -> void:
 		log_label.append_text(msg + "\n")
 		log_label.scroll_to_line(log_label.get_line_count() - 1)
 
-	print("LogLabel:", log_label)
-	print_tree()
 	Globals.log_message("BATALHA INICIADA")
 	Data.setup_enemies()
 	Data.setup_party()
@@ -158,6 +156,7 @@ func all_enemies_dead() -> bool:
 func show_game_over(message: String) -> void:
 	game_over_label.text = message
 	game_over_label.show()
+	$LogPanel.hide()
 	options.hide()
 	enemies.hide()
 	player_windows.hide()
