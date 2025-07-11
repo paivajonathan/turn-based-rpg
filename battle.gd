@@ -73,10 +73,10 @@ func goto_next_player(dir: int = 1) -> void:
 			if target != null: #npc turn
 				event_queue.add(Actions.FIRE, actor, target, true)
 		
-		#options.hide()
 		#enemies.release()
 		player_windows.activate(-1)
 		
+		options.hide() # Cadê os botões???
 		# TODO sort by speed rolls
 		await event_queue.run() # roda jogadores + NPCs no mesmo “turno”
 		
@@ -98,6 +98,7 @@ func goto_next_player(dir: int = 1) -> void:
 	action = -1
 	print(current_player_index)
 	player_windows.activate(current_player_index)
+	options.show() # Achoou!!
 	options.button_focus()
 
 
