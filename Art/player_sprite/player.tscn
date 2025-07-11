@@ -14,6 +14,8 @@ motion_mode = 1
 script = ExtResource("1_lb786")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
+scale = Vector2(5, 5)
 shape = SubResource("CircleShape2D_0knmd")
 
 [node name="SprPlayer" type="Sprite2D" parent="."]
