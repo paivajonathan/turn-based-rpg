@@ -10,6 +10,7 @@ var current_player_index: int = -1
 @onready var player_windows: PlayerWindows = $MarginContainer/PlayerWindows
 @onready var event_queue: EventQueue = $EventQueue
 @onready var game_over_label: Label = $GameOverLabel
+@onready var log_label: RichTextLabel = $LogPanel/RichTextLabel
 
 
 func _ready() -> void:
