@@ -68,12 +68,6 @@ text = "Shield"
 [node name="PlayerWindows" parent="MarginContainer" instance=ExtResource("3_i431l")]
 layout_mode = 2
 
-[node name="DiceLabel" type="Label" parent="MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-text = "CA: ???"
-
 [node name="Enemies" type="HBoxContainer" parent="." node_paths=PackedStringArray("buttons_container")]
 layout_mode = 1
 anchors_preset = 8

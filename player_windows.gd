@@ -32,8 +32,8 @@ func _on_player_hp_changed(hp: int, hp_max: int, value_change: int, index: int, 
 	if hp <= 0:
 		window.hide()
 
-func update_all_hp() -> void:
+func update_all() -> void:
 	for i in range(get_child_count()):
 		var child = get_child(i)
 		if child.visible:
-			child.update_hp_display()
+			child.update_all_display()
