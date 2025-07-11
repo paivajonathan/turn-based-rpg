@@ -17,12 +17,13 @@ spread = 180.0
 initial_velocity_min = 38.76
 initial_velocity_max = 100.0
 gravity = Vector3(0, 0, 0)
-scale_max = 2.0
+scale_min = 0.0
+scale_max = 22.83
 scale_curve = SubResource("CurveTexture_obylr")
 color = Color(0.882353, 0, 0, 1)
 
 [node name="Explosion" type="GPUParticles2D"]
-amount = 20
+amount = 100
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_jxnc1")
 script = ExtResource("1_l20sh")
