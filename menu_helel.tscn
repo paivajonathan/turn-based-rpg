@@ -94,6 +94,7 @@ theme_override_fonts/font = ExtResource("3_cpb1u")
 text = "Jogar"
 
 [node name="ButtonOpcao" type="Button" parent="Control/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("3_4f8hd")
 text = "Opções"
