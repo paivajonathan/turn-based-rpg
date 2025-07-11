@@ -10,11 +10,13 @@ var current_player_index: int = -1
 @onready var player_windows: PlayerWindows = $MarginContainer/PlayerWindows
 @onready var event_queue: EventQueue = $EventQueue
 @onready var game_over_label: Label = $GameOverLabel
-@onready var log_label: RichTextLabel = $LogPanel/RichTextLabel
+@onready var log_label: RichTextLabel = $LogPanel/LogText
 
 
 func _ready() -> void:
-	print("INICIADO")
+	print("LogLabel:", log_label)
+	print_tree()
+	log_message("BATALHA INICIADA")
 	Data.setup_enemies()
 	Data.setup_party()
 	setup_enemy_buttons()
@@ -70,7 +72,7 @@ func goto_next_player(dir: int = 1) -> void:
 	current_player_index += dir
 	
 	if all_players_dead():
-		print("Game Over! Você morreu")
+		log_message("Game Over! Você morreu")
 		return
 	
 	if current_player_index >= Data.party.size():
@@ -117,11 +119,11 @@ func _on_options_button_pressed(button: BaseButton, _index: int) -> void:
 	match button.text:
 		"Fire":
 			action = Actions.FIRE
-			print("Ação escolhida: Fire")
+			log_message("Ação escolhida: Fire")
 			enemies.button_focus()
 		"Shield":
 			action = Actions.SHIELD
-			print("Ação escolhida: Shield")
+			log_message("Ação escolhida: Shield")
 			var actor: BattleActor = Data.party[current_player_index]
 			event_queue.add(action, actor, actor)
 			goto_next_player()
@@ -155,3 +157,7 @@ func show_game_over(message: String) -> void:
 	options.hide()
 	enemies.hide()
 	player_windows.hide()
+
+func log_message(message: String) -> void: #logs
+	log_label.text += message + "\n"
+	log_label.scroll_to_line(log_label.get_line_count() - 1)

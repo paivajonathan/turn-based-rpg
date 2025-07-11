@@ -121,8 +121,9 @@ offset_top = 1.0
 offset_right = 322.0
 offset_bottom = 61.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="LogPanel"]
+[node name="LogText" type="RichTextLabel" parent="LogPanel"]
 layout_mode = 2
+bbcode_enabled = true
 
 [connection signal="button_pressed" from="MarginContainer/Options" to="." method="_on_options_button_pressed"]
 [connection signal="button_pressed" from="Enemies" to="." method="_on_enemies_button_pressed"]
