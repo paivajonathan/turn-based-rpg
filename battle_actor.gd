@@ -4,6 +4,7 @@ signal hp_changed(hp, hp_max, amount_change)
 
 @export var name: String = ""
 @export var hp_max: int = 1
+@export var ca: int = 10
 
 var defense := false
  
@@ -28,9 +29,9 @@ func healhurt(value: int, is_npc:bool = false) -> void:
 	if is_npc:
 		var NPC_DIFFICULTY_THRESHOLD = self.ca
 		var npc_threshold = NPC_DIFFICULTY_THRESHOLD
-		print("NPC rolou: ", coeficiente, " (precisa ser PAR e < ", npc_threshold, ")")
+		print("NPC rolou: ", coeficiente, " (precisa ser maior ou igual a ", npc_threshold, ")")
 		# NPC só acerta se for PAR e < 10
-		if coeficiente % 2 == 0 and coeficiente < npc_threshold:
+		if coeficiente >= npc_threshold:
 			ataque_valido = true
 		else:
 			print("NPC errou o ataque!")
