@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clbyh3s46d3qo"
-path="res://.godot/imported/2dpixx_-_free_assets_-_wizard_character_size_128x160_isometric_-_idle.png-6c22820c8a90aed6f6d176c2b05f5457.ctex"
+uid="uid://xo5wjkswyqxe"
+path="res://.godot/imported/spr_player.png-eca8bc2a2797b822a7c6219b67661934.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/player_sprite/2dpixx_-_free_assets_-_wizard_character_size_128x160_isometric_-_idle.png"
-dest_files=["res://.godot/imported/2dpixx_-_free_assets_-_wizard_character_size_128x160_isometric_-_idle.png-6c22820c8a90aed6f6d176c2b05f5457.ctex"]
+source_file="res://Art/player_sprite/spr_player.png"
+dest_files=["res://.godot/imported/spr_player.png-eca8bc2a2797b822a7c6219b67661934.ctex"]
 
 [params]
 
