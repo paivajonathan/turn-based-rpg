@@ -7,3 +7,19 @@ func _ready() -> void:
 
 func start_loop() -> void:
 	animation_menu.play("loop")
+
+
+func _on_button_jogar_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_button_opcao_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_button_sobre_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_button_sair_pressed() -> void:
+	pass # Replace with function body.

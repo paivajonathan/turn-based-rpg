@@ -2,7 +2,23 @@
 
 [ext_resource type="Texture2D" uid="uid://datukiuyxy3my" path="res://Art/helelBg.png" id="1_em0u6"]
 [ext_resource type="Script" uid="uid://caplixofmfi6q" path="res://texture_menu.gd" id="2_ewp1v"]
+[ext_resource type="Theme" uid="uid://dupwm4k1lvh6a" path="res://font/hele_theme.tres" id="3_4f8hd"]
 [ext_resource type="FontFile" uid="uid://kvrnkau14mt4" path="res://font/Metropolitan.ttf" id="3_cpb1u"]
+
+[sub_resource type="Animation" id="Animation_ewp1v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_em0u6"]
 resource_name = "loop"
@@ -22,34 +38,11 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(-150, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_ewp1v"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ewp1v"]
 _data = {
 &"RESET": SubResource("Animation_ewp1v"),
 &"loop": SubResource("Animation_em0u6")
 }
-
-[sub_resource type="Theme" id="Theme_4f8hd"]
-Label/colors/font_color = Color(1, 0.250003, 0.134874, 1)
-Label/colors/font_outline_color = Color(0.564686, 0.00718601, 1.44392e-07, 1)
-Label/colors/font_shadow_color = Color(0, 0, 0, 0)
-Label/constants/outline_size = 10
-Label/font_sizes/font_size = 57
-Label/fonts/font = null
 
 [node name="CanvasGroup" type="CanvasLayer"]
 
@@ -92,22 +85,27 @@ layout_mode = 0
 offset_left = 7.0
 offset_top = 168.0
 offset_right = 126.0
-offset_bottom = 285.0
+offset_bottom = 356.0
 
 [node name="ButtonJogar" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_4f8hd")
+theme_override_fonts/font = ExtResource("3_cpb1u")
 text = "Jogar"
 
 [node name="ButtonOpcao" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_4f8hd")
 text = "Opções"
 
 [node name="ButtonSobre" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_4f8hd")
 text = "Sobre"
 
 [node name="ButtonSair" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_4f8hd")
 text = "Sair"
 
 [node name="Label" type="Label" parent="Control"]
@@ -120,9 +118,14 @@ offset_top = -25.0
 offset_right = 161.0
 offset_bottom = 101.0
 grow_horizontal = 2
-theme = SubResource("Theme_4f8hd")
+theme = ExtResource("3_4f8hd")
 theme_type_variation = &"HeaderLarge"
 theme_override_fonts/font = ExtResource("3_cpb1u")
 text = "HELEL"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="Control/VBoxContainer/ButtonJogar" to="Control/texture_menu" method="_on_button_jogar_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/ButtonOpcao" to="Control/texture_menu" method="_on_button_opcao_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/ButtonSobre" to="Control/texture_menu" method="_on_button_sobre_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/ButtonSair" to="Control/texture_menu" method="_on_button_sair_pressed"]
