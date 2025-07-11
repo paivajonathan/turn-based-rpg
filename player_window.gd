@@ -34,3 +34,7 @@ func activate(on: bool) -> void:
 
 func _on_data_hp_changed(hp: int, hp_max: int, value_change: int) -> void:
 	self.hp_value.text = str(hp)
+	
+func update_hp_display() -> void:
+	if data:
+		hp_value.text = str(data.hp)

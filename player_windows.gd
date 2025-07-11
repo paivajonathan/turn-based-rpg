@@ -24,9 +24,16 @@ func activate(player_index: int) -> void:
 	# ativa novo, se existir e estiver vivo
 	if active_index != -1 and active_index < get_child_count():
 		var child = get_child(active_index)
-		if child.visible: # só ativa se o player ainda está visível (vivo)
+		if child.visible:
 			child.activate(true)
+			child.update_hp_display()  # <-- força atualizar o texto de HP da janela ativa
 
 func _on_player_hp_changed(hp: int, hp_max: int, value_change: int, index: int, window: Control) -> void:
 	if hp <= 0:
 		window.hide()
+
+func update_all_hp() -> void:
+	for i in range(get_child_count()):
+		var child = get_child(i)
+		if child.visible:
+			child.update_hp_display()

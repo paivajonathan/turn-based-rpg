@@ -18,3 +18,7 @@ func setup_enemies() -> void:
 		enemy.hp = 1
 		enemy.init()
 		enemies.append(enemy)
+
+func setup_party() -> void:
+	for player in party:
+		player.init()

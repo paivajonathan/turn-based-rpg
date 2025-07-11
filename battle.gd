@@ -15,7 +15,9 @@ var current_player_index: int = -1
 func _ready() -> void:
 	print("INICIADO")
 	Data.setup_enemies()
+	Data.setup_party()
 	setup_enemy_buttons()
+	player_windows.update_all_hp()
 	goto_next_player()
 
 func setup_enemy_buttons() -> void:
