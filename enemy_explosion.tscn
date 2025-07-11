@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcaqr43hunqmn"]
+
+[ext_resource type="Script" uid="uid://cso85p0uynlq1" path="res://enemy_explosion.gd" id="1_l20sh"]
+
+[sub_resource type="Curve" id="Curve_8jm0r"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_obylr"]
+curve = SubResource("Curve_8jm0r")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jxnc1"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 7.29
+spread = 180.0
+initial_velocity_min = 38.76
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_obylr")
+color = Color(0.882353, 0.698039, 0, 1)
+
+[node name="Explosion" type="GPUParticles2D"]
+amount = 20
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_jxnc1")
+script = ExtResource("1_l20sh")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
