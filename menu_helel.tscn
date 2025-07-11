@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://btpchjlawl8yh"]
+[gd_scene load_steps=6 format=3 uid="uid://btpchjlawl8yh"]
 
 [ext_resource type="Texture2D" uid="uid://datukiuyxy3my" path="res://Art/helelBg.png" id="1_em0u6"]
+[ext_resource type="Script" uid="uid://caplixofmfi6q" path="res://texture_menu.gd" id="2_ewp1v"]
 
 [sub_resource type="Animation" id="Animation_em0u6"]
 resource_name = "loop"
@@ -51,7 +52,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="texture_menu" type="TextureRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,8 +62,9 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_em0u6")
 expand_mode = 3
+script = ExtResource("2_ewp1v")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/TextureRect"]
+[node name="AnimationMenu" type="AnimationPlayer" parent="Control/texture_menu"]
 libraries = {
 &"": SubResource("AnimationLibrary_ewp1v")
 }
