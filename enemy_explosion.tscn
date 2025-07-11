@@ -19,7 +19,7 @@ initial_velocity_max = 100.0
 gravity = Vector3(0, 0, 0)
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_obylr")
-color = Color(0.882353, 0.698039, 0, 1)
+color = Color(0.882353, 0, 0, 1)
 
 [node name="Explosion" type="GPUParticles2D"]
 amount = 20

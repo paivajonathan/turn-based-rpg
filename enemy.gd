@@ -1,5 +1,7 @@
 class_name Enemy extends TextureButton
 
+@export var explosion_scene: PackedScene = preload("res://enemy_explosion.tscn")
+
 @export var data: BattleActor = null :
 	set(value):
 		data = value
@@ -26,6 +28,13 @@ func _on_focus_exited() -> void:
 func _on_data_hp_changed(hp: int, hp_max: int, value_change: int) -> void:
 	if hp <= 0:
 		hide()
+		
+		if explosion_scene: #kaboom!
+			var explosion = explosion_scene.instantiate()
+			var effects_layer = get_tree().root.get_node("Battle/Effects")
+			explosion.global_position = global_position
+			effects_layer.add_child(explosion)
+
 	else:
 		start_idle()
 		
