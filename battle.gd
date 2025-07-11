@@ -18,6 +18,14 @@ func _ready() -> void:
 	Data.setup_party()
 	setup_enemy_buttons()
 	player_windows.update_all_hp()
+	
+	# Rolar a CA antes da batalha
+	var rng = RandomNumberGenerator.new()
+	var draft_roll = rng.randi_range(1, 20)
+	for actor in Data.party:
+		actor.ca = draft_roll
+	$MarginContainer/DiceLabel.text = "CA: %d" % draft_roll
+	
 	goto_next_player()
 
 func setup_enemy_buttons() -> void:
