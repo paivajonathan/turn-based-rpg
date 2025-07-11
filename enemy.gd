@@ -29,14 +29,14 @@ func _on_data_hp_changed(hp: int, hp_max: int, value_change: int) -> void:
 	if hp <= 0:
 		hide()
 		
-		if explosion_scene: #kaboom!
+		if explosion_scene: # kaboom!
 			var explosion = explosion_scene.instantiate()
 			var effects_layer = get_tree().root.get_node("Battle/Effects")
 			explosion.global_position = global_position
 			effects_layer.add_child(explosion)
-
 	else:
 		start_idle()
+
 		
 func start_idle() -> void:
 	# toca a animação idle em loop
