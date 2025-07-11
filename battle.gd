@@ -14,9 +14,13 @@ var current_player_index: int = -1
 
 
 func _ready() -> void:
+	Globals.log_func = func(msg: String):
+		log_label.append_text(msg + "\n")
+		log_label.scroll_to_line(log_label.get_line_count() - 1)
+
 	print("LogLabel:", log_label)
 	print_tree()
-	log_message("BATALHA INICIADA")
+	Globals.log_message("BATALHA INICIADA")
 	Data.setup_enemies()
 	Data.setup_party()
 	setup_enemy_buttons()
@@ -72,7 +76,7 @@ func goto_next_player(dir: int = 1) -> void:
 	current_player_index += dir
 	
 	if all_players_dead():
-		log_message("Game Over! Você morreu")
+		Globals.log_message("Game Over! Você morreu")
 		return
 	
 	if current_player_index >= Data.party.size():
@@ -119,11 +123,11 @@ func _on_options_button_pressed(button: BaseButton, _index: int) -> void:
 	match button.text:
 		"Fire":
 			action = Actions.FIRE
-			log_message("Ação escolhida: Fire")
+			Globals.log_message("Ação escolhida: Fire")
 			enemies.button_focus()
 		"Shield":
 			action = Actions.SHIELD
-			log_message("Ação escolhida: Shield")
+			Globals.log_message("Ação escolhida: Shield")
 			var actor: BattleActor = Data.party[current_player_index]
 			event_queue.add(action, actor, actor)
 			goto_next_player()
@@ -157,7 +161,3 @@ func show_game_over(message: String) -> void:
 	options.hide()
 	enemies.hide()
 	player_windows.hide()
-
-func log_message(message: String) -> void: #logs
-	log_label.text += message + "\n"
-	log_label.scroll_to_line(log_label.get_line_count() - 1)

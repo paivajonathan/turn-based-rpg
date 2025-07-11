@@ -116,7 +116,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="LogPanel" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_left = 103.0
+offset_left = 66.0
 offset_top = 1.0
 offset_right = 322.0
 offset_bottom = 61.0

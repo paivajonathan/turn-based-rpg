@@ -19,6 +19,11 @@ func add(action: Actions, actor: BattleActor, target: BattleActor, is_npc: bool 
 func pop_back() -> void:
 	events.pop_back()
 
+func log(msg: String) -> void:
+	print(msg)
+	if Globals.log_func:
+		Globals.log_func.call(msg)
+
 func run() -> void:
 	# Base case
 	if events.is_empty():
@@ -42,14 +47,17 @@ func run() -> void:
 	match action:
 		Actions.FIRE:
 			if is_npc:
+				Globals.log_message("NPC %s está atacando %s" % [actor.name, target.name])
 				print("NPC %s está atacando %s" % [actor.name, target.name])
 			else:
+				Globals.log_message("Jogador %s está atacando %s" % [actor.name, target.name])
 				print("Jogador %s está atacando %s" % [actor.name, target.name])
 			target.healhurt(-1, is_npc)
 			get_parent().enemies.update_buttons()
 
 		Actions.SHIELD:
 			actor.change_defense(true)
+			Globals.log_message("%s está se defendendo!" % actor.name)
 			print("%s está se defendendo!" % actor.name)
 			
 	await(get_tree().create_timer(0.5).timeout)

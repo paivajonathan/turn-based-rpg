@@ -7,7 +7,6 @@ signal hp_changed(hp, hp_max, amount_change)
 @export var ca: int = 10
 
 var defense := false
- 
 var hp: int = hp_max
 
 func init() -> void:
@@ -21,26 +20,31 @@ func copy() -> BattleActor:
 func change_defense(value: bool) -> void:
 	defense = value
 
-func healhurt(value: int, is_npc:bool = false) -> void:
+func log(msg: String) -> void:
+	print(msg)
+	if Globals.log_func:
+		Globals.log_func.call(msg)
+
+func healhurt(value: int, is_npc: bool = false) -> void:
 	var rng := RandomNumberGenerator.new()
-	var coeficiente = rng.randi_range(1,20) #aleatoriedade de um dado de 20 lados
+	var coeficiente = rng.randi_range(1, 20) # aleatoriedade de um dado de 20 lados
 	
 	var ataque_valido := false
 	if is_npc:
-		var NPC_DIFFICULTY_THRESHOLD = self.ca
-		var npc_threshold = NPC_DIFFICULTY_THRESHOLD
-		print("NPC rolou: ", coeficiente, " (precisa ser maior ou igual a ", npc_threshold, ")")
-		# NPC só acerta se for PAR e < 10
+		var npc_threshold = self.ca
+		print("NPC rolou: %d (precisa ser maior ou igual a %d)" % [coeficiente, npc_threshold])
+		Globals.log_message("NPC rolou: %d (precisa ser maior ou igual a %d)" % [coeficiente, npc_threshold])
 		if coeficiente >= npc_threshold:
 			ataque_valido = true
 		else:
-			print("NPC errou o ataque!")
+			print(("NPC errou o ataque!"))
+			Globals.log_message("NPC errou o ataque!")
 	else:
-		# Jogador acerta se for PAR
 		if coeficiente % 2 == 0:
 			ataque_valido = true
 		else:
-			print("Player errou o ataque!",)
+			print("Player errou o ataque!")
+			Globals.log_message("Player errou o ataque!")
 
 	if ataque_valido:
 		if not defense:
@@ -48,7 +52,8 @@ func healhurt(value: int, is_npc:bool = false) -> void:
 			hp += value
 			hp = clampi(hp, 0, hp_max)
 			hp_changed.emit(hp, hp_max, previous_hp - hp)
-			print(name, " sofreu dano! HP agora: ", hp)
+			print("%s sofreu dano! HP agora: %d" % [name, hp])
+			Globals.log_message("%s sofreu dano! HP agora: %d" % [name, hp])
 		else:
-			print(name, " está protegido! Nenhum dano recebido")
-	
+			print("%s está protegido! Nenhum dano recebido" % name)
+			Globals.log_message("%s está protegido! Nenhum dano recebido" % name)
