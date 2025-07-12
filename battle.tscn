@@ -130,4 +130,5 @@ layout_mode = 2
 bbcode_enabled = true
 
 [connection signal="button_pressed" from="MarginContainer/Options" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Options/VBoxContainer/ButtonRun" to="." method="_on_button_run_pressed"]
 [connection signal="button_pressed" from="Enemies" to="." method="_on_enemies_button_pressed"]
