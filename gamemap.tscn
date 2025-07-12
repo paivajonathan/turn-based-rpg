@@ -10,36 +10,41 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k42st"]
 texture = ExtResource("1_3jegu")
 texture_region_size = Vector2i(24, 24)
-0:11/size_in_atlas = Vector2i(2, 3)
-0:11/0 = 0
-0:11/0/texture_origin = Vector2i(0, -22)
-0:11/0/z_index = 1
 6:20/size_in_atlas = Vector2i(2, 2)
 6:20/0 = 0
 6:20/0/texture_origin = Vector2i(0, -12)
 6:20/0/z_index = 2
+6:20/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -12, -24, 0, 0, 12, 24, 0)
 4:25/size_in_atlas = Vector2i(2, 1)
 4:25/0 = 0
 4:25/0/z_index = 2
+4:25/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -12, -24, 0, 0, 12, 24, 0)
 2:25/size_in_atlas = Vector2i(2, 2)
 2:25/0 = 0
 2:25/0/texture_origin = Vector2i(0, -12)
 2:25/0/z_index = 2
+2:25/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, 0, 0, -12, 24, 0, 23.7079, 24.5546, -0.564476, 35.2796, -23.7079, 22.8612)
 0:14/size_in_atlas = Vector2i(2, 3)
 0:14/0 = 0
 0:14/0/texture_origin = Vector2i(0, -24)
 0:14/0/z_index = 3
+0:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, 0, 0, -12, 24, 0, 24.8368, 48.827, -2.2579, 60.1165, -23.1434, 50.5204)
 2:11/size_in_atlas = Vector2i(2, 2)
 2:11/0 = 0
 2:11/0/texture_origin = Vector2i(0, -12)
 2:11/0/z_index = 2
+2:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, 0, 0, -12, 24, 0, 0, 12)
 2:13/size_in_atlas = Vector2i(2, 1)
 2:13/0 = 0
 2:13/0/z_index = 2
+0:11/size_in_atlas = Vector2i(2, 3)
+0:11/0 = 0
+0:11/0/texture_origin = Vector2i(0, -25)
 
 [sub_resource type="TileSet" id="TileSet_gopxi"]
 tile_shape = 1
 tile_size = Vector2i(48, 24)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_k42st")
 
 [sub_resource type="Animation" id="Animation_i0yt5"]
@@ -93,7 +98,7 @@ script = ExtResource("2_gopxi")
 
 [node name="Player" parent="." instance=ExtResource("2_k42st")]
 z_index = 3
-position = Vector2(128, 50)
+position = Vector2(96, 111)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.7, 0.7)
