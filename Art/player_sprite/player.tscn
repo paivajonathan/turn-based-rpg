@@ -1,10 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6tgk1b6v031j"]
+[gd_scene load_steps=10 format=3 uid="uid://c6tgk1b6v031j"]
 
 [ext_resource type="Script" uid="uid://0084vrbsk6x4" path="res://Art/player_sprite/player.gd" id="1_lb786"]
 [ext_resource type="Texture2D" uid="uid://xo5wjkswyqxe" path="res://Art/player_sprite/spr_player_idle0.png" id="2_24c8y"]
+[ext_resource type="Texture2D" uid="uid://cpx5mqq5017ux" path="res://Art/player_sprite/spr_player_idle1.png" id="2_kva7h"]
+[ext_resource type="Texture2D" uid="uid://d2k61gyhggpir" path="res://Art/player_sprite/spr_player_idle2.png" id="4_l031d"]
+[ext_resource type="Texture2D" uid="uid://b8ftllsb7kehb" path="res://Art/player_sprite/spr_player_idle3.png" id="5_ceup2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0knmd"]
 radius = 2.0
+
+[sub_resource type="Animation" id="Animation_2ej3e"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_24c8y"), ExtResource("2_kva7h"), ExtResource("4_l031d"), ExtResource("5_ceup2")]
+}
+
+[sub_resource type="Animation" id="Animation_m7ttl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_kva7h")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uewtl"]
+_data = {
+&"RESET": SubResource("Animation_m7ttl"),
+&"idle": SubResource("Animation_2ej3e")
+}
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 2
@@ -21,6 +63,9 @@ shape = SubResource("CircleShape2D_0knmd")
 [node name="SprPlayer" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(5, -10)
-texture = ExtResource("2_24c8y")
+texture = ExtResource("2_kva7h")
 
 [node name="AnimationIdle" type="AnimationPlayer" parent="SprPlayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_uewtl")
+}

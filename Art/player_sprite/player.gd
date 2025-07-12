@@ -7,3 +7,11 @@ func  _physics_process(delta: float) -> void:
 	else:
 		velocity = Vector2.ZERO
 	move_and_slide()
+
+@onready var animation_player: AnimationPlayer = $SprPlayer/AnimationIdle
+
+func _ready() -> void:
+	start_idle()
+
+func start_idle() -> void:
+	animation_player.play("idle")
