@@ -52,8 +52,8 @@ func setup_enemy_buttons() -> void:
 func _input(event: InputEvent) -> void:
 	if game_over_label.visible:
 		# se o jogo acabou, só aceita Enter ou Es
-		if event.is_action_pressed("ui_text_backspace"):
-			get_tree().change_scene_to_file("res://gamemap.tscn")
+		if event is InputEventKey and event.pressed and event.keycode == KEY_X:
+			TransitionHandler.fade_out(get_tree().current_scene, "res://gamemap.tscn", .8, Color.DARK_RED)
 		elif event.is_action_pressed("ui_cancel"):
 			get_tree().quit()
 		return
