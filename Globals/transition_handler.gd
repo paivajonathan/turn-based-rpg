@@ -32,7 +32,7 @@ func fade_out(from, to, duration: float, color:Color) -> void:
 	var tween2 = get_tree().create_tween()
 	tween2.set_ease(Tween.EASE_IN_OUT)
 	tween2.set_trans(Tween.TRANS_LINEAR)
-	tween2.tween_property(colorRect, "color", color, duration/2)
+	tween2.tween_property(colorRect, "color", Color(0,0,0,0), duration/2.0)
 	
 	await tween2.finished
 	

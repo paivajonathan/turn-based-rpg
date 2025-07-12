@@ -163,4 +163,4 @@ func show_game_over(message: String) -> void:
 
 
 func _on_button_run_pressed() -> void:
-	get_tree().change_scene_to_file("res://gamemap.tscn")
+	TransitionHandler.fade_out(get_tree().current_scene, "res://gamemap.tscn", .8, Color.WHITE)
