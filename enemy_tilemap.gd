@@ -10,4 +10,4 @@ func _on_body_entered(body: Node) -> void:
 
 	if body.name == "Player":
 		print("Colidiu com Player, carregando cena de batalha…")
-		get_tree().change_scene_to_file(battle_scene)
+		TransitionHandler.fade_out(get_tree().current_scene, battle_scene, .8, Color.BLACK)

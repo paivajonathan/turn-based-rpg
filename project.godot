@@ -17,9 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Data="*res://data.gd"
-Globals="*res://globals.gd"
-BgMusic="*res://bg_music.tscn"
+Data="*res://Globals/data.gd"
+Globals="*res://Globals/globals.gd"
+BgMusic="*res://Globals/bg_music.tscn"
+TransitionHandler="*res://Globals/transition_handler.gd"
 
 [display]
 
