@@ -17,7 +17,7 @@ var data: BattleActor = null:
 			data.hp_changed.connect(_on_data_hp_changed)
 			p_name.text = data.name.erase(8, 99)
 			hp_value.text = str(data.hp)
-			ca_value.text = "CA: %d" % data.ca
+			ca_value.text = "%d" % data.ca
 			show()
 		else:
 			hide()
@@ -44,7 +44,7 @@ func update_hp_display() -> void:
 		
 func update_ca_display() -> void:
 	if data:
-		ca_value.text = "CA: %d" % data.ca
+		ca_value.text = "%d" % data.ca
 
 func update_all_display() -> void:
 	update_hp_display()

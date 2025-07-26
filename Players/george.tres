@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_xfjqr")
-name = "George"
+name = "Azriel"
 hp_max = 1
 ca = 10
 metadata/_custom_type_script = "uid://bp7nfgpum348d"
