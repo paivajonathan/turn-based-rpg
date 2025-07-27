@@ -134,12 +134,9 @@ volume_db = 11.277
 
 [node name="sfx_hover" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ff2hl")
-volume_db = 3.0
+volume_db = 7.518
 
-[connection signal="mouse_entered" from="Control/VBoxContainer/ButtonJogar" to="Control/texture_menu" method="_on_button_jogar_mouse_entered"]
 [connection signal="pressed" from="Control/VBoxContainer/ButtonJogar" to="Control/texture_menu" method="_on_button_jogar_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/ButtonOpcao" to="Control/texture_menu" method="_on_button_opcao_pressed"]
-[connection signal="mouse_entered" from="Control/VBoxContainer/ButtonSobre" to="Control/texture_menu" method="_on_button_sobre_mouse_entered"]
 [connection signal="pressed" from="Control/VBoxContainer/ButtonSobre" to="Control/texture_menu" method="_on_button_sobre_pressed"]
-[connection signal="mouse_entered" from="Control/VBoxContainer/ButtonSair" to="Control/texture_menu" method="_on_button_sair_mouse_entered"]
 [connection signal="pressed" from="Control/VBoxContainer/ButtonSair" to="Control/texture_menu" method="_on_button_sair_pressed"]
