@@ -40,9 +40,6 @@ func run() -> void:
 	var actor: BattleActor = event.actor
 	var target: BattleActor = event.target
 	var is_npc: bool = event.get("is_npc", false)
-
-	
-	#print("Running event: ", actor.name, " is ", Actions.keys()[action], " ", target.name, ".")
 	
 	print(">> Executando evento: ", actor.name, " vai ", Actions.keys()[action], " em ", target.name)
 	
