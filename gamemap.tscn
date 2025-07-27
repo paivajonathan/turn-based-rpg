@@ -114,10 +114,13 @@ position = Vector2(96, 111)
 zoom = Vector2(0.7, 0.7)
 
 [node name="Enemy_tilemap" type="Area2D" parent="."]
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("4_a8wng")
 
 [node name="Enemy_sprite_tilemap" type="Sprite2D" parent="Enemy_tilemap"]
-z_index = 3
+z_index = 1
+y_sort_enabled = true
 position = Vector2(83, -100)
 scale = Vector2(1.625, 1.60938)
 texture = ExtResource("5_i0yt5")
@@ -129,7 +132,8 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_tilemap"]
-z_index = 2
+z_index = 1
+y_sort_enabled = true
 position = Vector2(83, -98)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_eroag")
