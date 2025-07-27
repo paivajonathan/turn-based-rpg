@@ -1,5 +1,7 @@
 class_name EventQueue extends Node
 
+@onready var sfx_fire_hit: AudioStreamPlayer = $"../sfx_fire_hit"
+
 enum Actions {
 	FIRE,
 	SHIELD,
@@ -52,6 +54,7 @@ func run() -> void:
 			else:
 				Globals.log_message("Jogador %s está atacando %s" % [actor.name, target.name])
 				print("Jogador %s está atacando %s" % [actor.name, target.name])
+				sfx_fire_hit.play(0.4)
 			target.healhurt(-1, is_npc)
 			get_parent().enemies.update_buttons()
 

@@ -6,6 +6,7 @@ signal hp_changed(hp, hp_max, amount_change)
 @export var hp_max: int = 1
 @export var ca: int = 10
 
+
 var defense := false
 var hp: int = hp_max
 

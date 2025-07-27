@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://di1dek1yf6ysn"]
+[gd_scene load_steps=11 format=3 uid="uid://di1dek1yf6ysn"]
 
 [ext_resource type="Script" uid="uid://bo3tt7dw2014w" path="res://Utility/menu_APRIL_2025.gd" id="1_ip7xm"]
 [ext_resource type="Script" uid="uid://cogv3ftpgptnm" path="res://battle.gd" id="1_oxp8w"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bw3ftyjiaapxm" path="res://player_windows.tscn" id="3_i431l"]
 [ext_resource type="PackedScene" uid="uid://xfrm3l7k73b0" path="res://enemy.tscn" id="4_6t8i5"]
 [ext_resource type="Resource" uid="uid://bljkqcwlrvsb5" path="res://Enemies/mister_moustache.tres" id="6_dw4jg"]
+[ext_resource type="AudioStream" uid="uid://d2dhgc6h31ack" path="res://music/sfx/hover.mp3" id="8_mhv3b"]
+[ext_resource type="AudioStream" uid="uid://5si6fr6u1m8h" path="res://music/sfx/fireball-option.mp3" id="9_lcjiy"]
+[ext_resource type="AudioStream" uid="uid://buwhvasl1rwox" path="res://music/sfx/fireball-hit.mp3" id="10_ol6im"]
 
 [node name="Battle" type="Control"]
 layout_mode = 3
@@ -129,6 +132,20 @@ offset_bottom = 61.0
 layout_mode = 2
 bbcode_enabled = true
 
+[node name="sfx_hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_mhv3b")
+volume_db = 3.0
+
+[node name="sfx_fire_option" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_lcjiy")
+volume_db = 2.0
+
+[node name="sfx_fire_hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ol6im")
+
 [connection signal="button_pressed" from="MarginContainer/Options" to="." method="_on_options_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/Options/VBoxContainer/ButtonFire" to="." method="_on_button_fire_mouse_entered"]
+[connection signal="mouse_entered" from="MarginContainer/Options/VBoxContainer/ButtonShield" to="." method="_on_button_shield_mouse_entered"]
+[connection signal="mouse_entered" from="MarginContainer/Options/VBoxContainer/ButtonRun" to="." method="_on_button_run_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/Options/VBoxContainer/ButtonRun" to="." method="_on_button_run_pressed"]
 [connection signal="button_pressed" from="Enemies" to="." method="_on_enemies_button_pressed"]

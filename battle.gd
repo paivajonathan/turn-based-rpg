@@ -12,6 +12,9 @@ var current_player_index: int = -1
 @onready var game_over_label: Label = $GameOverLabel
 @onready var log_label: RichTextLabel = $LogPanel/LogText
 
+@onready var sfx_hover: AudioStreamPlayer = $sfx_hover
+@onready var sfx_fire_option: AudioStreamPlayer = $sfx_fire_option
+
 
 func _ready() -> void:
 	Globals.log_func = func(msg: String):
@@ -120,6 +123,7 @@ func goto_next_player(dir: int = 1) -> void:
 func _on_options_button_pressed(button: BaseButton, _index: int) -> void:
 	match button.text:
 		"Fire":
+			sfx_fire_option.play(0.1)
 			action = Actions.FIRE
 			Globals.log_message("Ação escolhida: Fire")
 			enemies.button_focus()
@@ -161,6 +165,14 @@ func show_game_over(message: String) -> void:
 	enemies.hide()
 	player_windows.hide()
 
-
 func _on_button_run_pressed() -> void:
 	TransitionHandler.fade_out(get_tree().current_scene, "res://gamemap.tscn", .8, Color.WHITE)
+
+func _on_button_fire_mouse_entered() -> void:
+	sfx_hover.play(0.6)
+
+func _on_button_shield_mouse_entered() -> void:
+	sfx_hover.play(0.6)
+
+func _on_button_run_mouse_entered() -> void:
+	sfx_hover.play(0.6)
