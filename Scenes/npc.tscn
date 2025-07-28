@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cuphmt23op83r" path="res://Scripts/npc.gd" id="1_xxcha"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ideak"]
-radius = 22.5499
+radius = 35.5141
 
 [sub_resource type="Animation" id="Animation_xxcha"]
 length = 0.001
@@ -65,3 +65,5 @@ flip_h = true
 libraries = {
 &"": SubResource("AnimationLibrary_kh24r")
 }
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
