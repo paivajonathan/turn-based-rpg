@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://pi1dquksria"]
+
+[ext_resource type="Script" uid="uid://cfacgra7oj3tf" path="res://Scripts/dialogue.gd" id="1_5ea0y"]
+[ext_resource type="Texture2D" uid="uid://lk0wet7k216x" path="res://Art/dialogue/npcGirl.png" id="2_4nagb"]
+
+[resource]
+script = ExtResource("1_5ea0y")
+texture = ExtResource("2_4nagb")
+name = "Camponesa"
+dialogue = "Para onde todos foram? Que vozes são essas?"
+path_option = ""
+options = Array[ExtResource("1_5ea0y")]([null])
+metadata/_custom_type_script = "uid://cfacgra7oj3tf"
