@@ -30,3 +30,9 @@ func add_buttons(options):
 		var button = next_button.instantiate()
 		button.dialogue = option
 		%Options.add_child(button)
+
+func hide_dialogue():
+	%UI.hide()
+ 
+func show_dialogue():
+	%UI.show()

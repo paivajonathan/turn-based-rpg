@@ -7,6 +7,7 @@ var dialogue : Dialogue:
 
 func _on_pressed() -> void:
 	if dialogue.options.size() == 0:
+		DialogueManager.hide_dialogue()
 		return
 
 	DialogueManager.dialogue = dialogue
