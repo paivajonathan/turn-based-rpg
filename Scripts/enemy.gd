@@ -1,6 +1,6 @@
 class_name Enemy extends TextureButton
 
-@export var explosion_scene: PackedScene = preload("res://enemy_explosion.tscn")
+@export var explosion_scene: PackedScene = preload("res://Scenes/enemy_explosion.tscn")
 
 @export var data: BattleActor = null :
 	set(value):

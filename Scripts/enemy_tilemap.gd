@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var battle_scene: String = "res://battle.tscn"
+@export var battle_scene: String = "res://Scenes/battle.tscn"
 
 func _ready():
 	connect("body_entered", Callable(self, "_on_body_entered"))

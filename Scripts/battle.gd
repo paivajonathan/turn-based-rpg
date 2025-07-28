@@ -56,7 +56,7 @@ func _input(event: InputEvent) -> void:
 	if game_over_label.visible:
 		# se o jogo acabou, só aceita Enter ou Es
 		if event is InputEventKey and event.pressed and event.keycode == KEY_X:
-			TransitionHandler.fade_out(get_tree().current_scene, "res://gamemap.tscn", .8, Color.DARK_RED)
+			TransitionHandler.fade_out(get_tree().current_scene, "res://Scenes/gamemap.tscn", .8, Color.DARK_RED)
 		elif event.is_action_pressed("ui_cancel"):
 			get_tree().quit()
 		return
@@ -166,7 +166,7 @@ func show_game_over(message: String) -> void:
 	player_windows.hide()
 
 func _on_button_run_pressed() -> void:
-	TransitionHandler.fade_out(get_tree().current_scene, "res://gamemap.tscn", .8, Color.WHITE)
+	TransitionHandler.fade_out(get_tree().current_scene, "res://Scenes/gamemap.tscn", .8, Color.WHITE)
 
 func _on_button_fire_mouse_entered() -> void:
 	sfx_hover.play(0.6)

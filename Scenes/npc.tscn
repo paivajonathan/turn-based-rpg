@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://clcbg2v00emqx"]
 
 [ext_resource type="Texture2D" uid="uid://c6gdqtgigi8ay" path="res://Art/npc_sprite/peasant_girl.png" id="1_ideak"]
-[ext_resource type="Script" uid="uid://cuphmt23op83r" path="res://npc.gd" id="1_xxcha"]
+[ext_resource type="Script" uid="uid://cuphmt23op83r" path="res://Scripts/npc.gd" id="1_xxcha"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ideak"]
 radius = 4.12311

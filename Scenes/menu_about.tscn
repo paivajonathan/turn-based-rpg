@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://oguw5p6hcxer"]
 
 [ext_resource type="Texture2D" uid="uid://datukiuyxy3my" path="res://Art/helelBg.png" id="1_iejn4"]
-[ext_resource type="Script" uid="uid://c2hd1ld1y3iqr" path="res://about_menu.gd" id="2_0g7e6"]
+[ext_resource type="Script" uid="uid://c2hd1ld1y3iqr" path="res://Scripts/about_menu.gd" id="2_0g7e6"]
 [ext_resource type="Theme" uid="uid://dupwm4k1lvh6a" path="res://font/hele_theme.tres" id="3_7dk7o"]
 [ext_resource type="AudioStream" uid="uid://xc0ml2ihig8i" path="res://music/sfx/click.mp3" id="4_o8e56"]
 [ext_resource type="AudioStream" uid="uid://d2dhgc6h31ack" path="res://music/sfx/hover.mp3" id="5_6jrh3"]
