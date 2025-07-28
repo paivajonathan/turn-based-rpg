@@ -44,11 +44,10 @@ _data = {
 &"idle": SubResource("Animation_ideak")
 }
 
-[node name="Npc" type="CharacterBody2D"]
+[node name="Npc" type="Area2D"]
 z_index = 2
 texture_filter = 1
 scale = Vector2(2, 2)
-motion_mode = 1
 script = ExtResource("1_xxcha")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

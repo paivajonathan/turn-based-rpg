@@ -9,6 +9,7 @@ next_button = ExtResource("2_s3xy2")
 
 [node name="UI" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+visible = false
 
 [node name="PanelContainer" type="PanelContainer" parent="UI"]
 anchors_preset = 5
