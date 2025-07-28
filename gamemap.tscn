@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c43cgr0iutut4"]
+[gd_scene load_steps=14 format=4 uid="uid://c43cgr0iutut4"]
 
 [ext_resource type="Texture2D" uid="uid://jv3bvihd6owy" path="res://Art/TileSet/tile_set.png" id="1_3jegu"]
 [ext_resource type="Script" uid="uid://cg7odsxc644f1" path="res://tile_map_layer.gd" id="2_gopxi"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://hso1ynn1x8xi" path="res://enemy_tilemap.gd" id="4_a8wng"]
 [ext_resource type="Texture2D" uid="uid://75ag25fuosvt" path="res://Art/spr_ofanim.png" id="5_i0yt5"]
 [ext_resource type="Script" uid="uid://cxpsc43t316np" path="res://enemy_sprite_tilemap.gd" id="6_i0yt5"]
+[ext_resource type="PackedScene" uid="uid://clcbg2v00emqx" path="res://npc.tscn" id="7_eroag"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k42st"]
 texture = ExtResource("1_3jegu")
@@ -148,3 +149,6 @@ y_sort_enabled = true
 position = Vector2(83, -98)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_eroag")
+
+[node name="Npc" parent="." instance=ExtResource("7_eroag")]
+position = Vector2(293, 480)

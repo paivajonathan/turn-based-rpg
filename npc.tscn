@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://clcbg2v00emqx"]
+
+[ext_resource type="Texture2D" uid="uid://c6gdqtgigi8ay" path="res://Art/npc_sprite/peasant_girl.png" id="1_ideak"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ideak"]
+radius = 4.12311
+
+[node name="Npc" type="CharacterBody2D"]
+z_index = 2
+texture_filter = 1
+scale = Vector2(2, 2)
+motion_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, -5)
+shape = SubResource("CircleShape2D_ideak")
+
+[node name="SprNpc" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(5, -10)
+scale = Vector2(0.0229297, 0.0235029)
+texture = ExtResource("1_ideak")
+
+[node name="AnimationIdle" type="AnimationPlayer" parent="SprNpc"]
