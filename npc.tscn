@@ -1,15 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://clcbg2v00emqx"]
+[gd_scene load_steps=7 format=3 uid="uid://clcbg2v00emqx"]
 
 [ext_resource type="Texture2D" uid="uid://c6gdqtgigi8ay" path="res://Art/npc_sprite/peasant_girl.png" id="1_ideak"]
+[ext_resource type="Script" uid="uid://cuphmt23op83r" path="res://npc.gd" id="1_xxcha"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ideak"]
 radius = 4.12311
+
+[sub_resource type="Animation" id="Animation_ideak"]
+resource_name = "idle"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_xxcha"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kh24r"]
+_data = {
+&"RESET": SubResource("Animation_xxcha"),
+&"idle": SubResource("Animation_ideak")
+}
 
 [node name="Npc" type="CharacterBody2D"]
 z_index = 2
 texture_filter = 1
 scale = Vector2(2, 2)
 motion_mode = 1
+script = ExtResource("1_xxcha")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, -5)
@@ -20,5 +60,9 @@ z_index = 2
 position = Vector2(5, -10)
 scale = Vector2(0.0229297, 0.0235029)
 texture = ExtResource("1_ideak")
+flip_h = true
 
 [node name="AnimationIdle" type="AnimationPlayer" parent="SprNpc"]
+libraries = {
+&"": SubResource("AnimationLibrary_kh24r")
+}
