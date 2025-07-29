@@ -151,5 +151,4 @@ scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_eroag")
 
 [node name="Npc" parent="." instance=ExtResource("7_eroag")]
-z_index = 1
-position = Vector2(293, 480)
+position = Vector2(290, 480)
