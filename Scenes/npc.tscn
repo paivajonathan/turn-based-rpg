@@ -2,9 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c6gdqtgigi8ay" path="res://Art/npc_sprite/peasant_girl.png" id="1_ideak"]
 [ext_resource type="Script" uid="uid://cuphmt23op83r" path="res://Scripts/npc.gd" id="1_xxcha"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ideak"]
-radius = 35.5141
+[ext_resource type="PackedScene" uid="uid://caf1i0fss1qn5" path="res://Scenes/interaction.tscn" id="2_g6unj"]
 
 [sub_resource type="Animation" id="Animation_xxcha"]
 length = 0.001
@@ -44,20 +42,18 @@ _data = {
 &"idle": SubResource("Animation_ideak")
 }
 
-[node name="Npc" type="Area2D"]
+[node name="Npc" type="CharacterBody2D"]
 z_index = 2
 texture_filter = 1
 scale = Vector2(2, 2)
 script = ExtResource("1_xxcha")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-z_index = 2
-position = Vector2(5, -10)
-shape = SubResource("CircleShape2D_ideak")
+[node name="Interaction" parent="." instance=ExtResource("2_g6unj")]
+scale = Vector2(1, 2)
 
 [node name="SprNpc" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(5, -10)
+position = Vector2(5.68434e-14, 4.76837e-07)
 scale = Vector2(0.0229297, 0.0235029)
 texture = ExtResource("1_ideak")
 flip_h = true
@@ -66,5 +62,3 @@ flip_h = true
 libraries = {
 &"": SubResource("AnimationLibrary_kh24r")
 }
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
