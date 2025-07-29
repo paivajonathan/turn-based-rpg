@@ -12,19 +12,23 @@ curve = SubResource("Curve_8jm0r")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jxnc1"]
 particle_flag_disable_z = true
 emission_shape = 1
-emission_sphere_radius = 7.29
+emission_sphere_radius = 89.13
 spread = 180.0
 initial_velocity_min = 38.76
 initial_velocity_max = 100.0
 gravity = Vector3(0, 0, 0)
 scale_min = 0.0
-scale_max = 22.83
+scale_max = 42.69
 scale_curve = SubResource("CurveTexture_obylr")
 color = Color(0.882353, 0, 0, 1)
 
 [node name="Explosion" type="GPUParticles2D"]
+position = Vector2(507, 432)
+scale = Vector2(2, 2)
 amount = 100
+lifetime = 1.35
 explosiveness = 1.0
+randomness = 0.17
 process_material = SubResource("ParticleProcessMaterial_jxnc1")
 script = ExtResource("1_l20sh")
 
