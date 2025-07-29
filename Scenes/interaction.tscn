@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://caf1i0fss1qn5"]
 
-[ext_resource type="Script" uid="uid://d0djl0cxgbpeg" path="res://Scenes/interaction.gd" id="1_5sh1j"]
+[ext_resource type="Script" uid="uid://d0djl0cxgbpeg" path="res://Scripts/interaction.gd" id="1_5sh1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5sh1j"]
 
@@ -14,11 +14,12 @@ shape = SubResource("RectangleShape2D_5sh1j")
 unique_name_in_owner = true
 visible = false
 modulate = Color(1, 0, 0, 1)
-offset_left = -19.0
-offset_top = -33.0
-offset_right = 21.0
-offset_bottom = -10.0
-text = "!"
+offset_left = -20.0
+offset_top = -21.0
+offset_right = 20.0
+offset_bottom = 2.0
+scale = Vector2(1, 0.5)
+text = "!!!"
 horizontal_alignment = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

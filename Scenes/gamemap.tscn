@@ -99,7 +99,6 @@ radius = 16.6667
 
 [node name="GameMap" type="Node2D"]
 y_sort_enabled = true
-position = Vector2(1, 0)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 y_sort_enabled = true

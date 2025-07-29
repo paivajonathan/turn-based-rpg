@@ -17,8 +17,8 @@ var dialogue : Dialogue:
 		%Options.show()
 		
 #just testing
-func _ready():
-	dialogue = load("res://Data/Dialogue/0.tres")
+#func _ready():
+	#dialogue = load("res://Data/Dialogue/0.tres")
 
 func reset_options():
 	for child in %Options.get_children():

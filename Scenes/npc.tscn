@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://clcbg2v00emqx"]
+[gd_scene load_steps=8 format=3 uid="uid://clcbg2v00emqx"]
 
 [ext_resource type="Texture2D" uid="uid://c6gdqtgigi8ay" path="res://Art/npc_sprite/peasant_girl.png" id="1_ideak"]
 [ext_resource type="Script" uid="uid://cuphmt23op83r" path="res://Scripts/npc.gd" id="1_xxcha"]
 [ext_resource type="PackedScene" uid="uid://caf1i0fss1qn5" path="res://Scenes/interaction.tscn" id="2_g6unj"]
+[ext_resource type="Resource" uid="uid://pi1dquksria" path="res://Data/Dialogue/0.tres" id="2_h1ryf"]
 
 [sub_resource type="Animation" id="Animation_xxcha"]
 length = 0.001
@@ -47,6 +48,7 @@ z_index = 2
 texture_filter = 1
 scale = Vector2(2, 2)
 script = ExtResource("1_xxcha")
+dialogue = ExtResource("2_h1ryf")
 
 [node name="Interaction" parent="." instance=ExtResource("2_g6unj")]
 scale = Vector2(1, 2)
