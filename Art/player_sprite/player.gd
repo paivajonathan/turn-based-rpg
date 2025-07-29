@@ -13,7 +13,6 @@ func  _physics_process(delta: float) -> void:
 	update_animation()
 
 
-
 #func _ready() -> void:
 	#start_idle()
 #

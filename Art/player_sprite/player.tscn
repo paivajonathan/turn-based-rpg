@@ -35,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://bfjqao4ll2j1x" path="res://Art/player_sprite/idle/tile015.png" id="33_enig0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0knmd"]
-radius = 2.0
+radius = 4.0
 
 [sub_resource type="Animation" id="Animation_m7ttl"]
 length = 0.001
