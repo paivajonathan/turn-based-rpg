@@ -6,6 +6,6 @@
 script = ExtResource("1_rsjgm")
 name = "Camponesa"
 dialogue = ""
-path_option = "Ok."
+path_option = "Vou averiguar"
 options = Array[ExtResource("1_rsjgm")]([])
 metadata/_custom_type_script = "uid://cfacgra7oj3tf"

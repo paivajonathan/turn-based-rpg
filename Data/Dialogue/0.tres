@@ -8,7 +8,7 @@
 script = ExtResource("1_rvy15")
 texture = ExtResource("3_mlj8w")
 name = "Camponesa"
-dialogue = "Para onde todos foram? Que vozes são essas?"
+dialogue = "Para onde todos foram? Que seres são esses?"
 path_option = ""
 options = Array[ExtResource("1_rvy15")]([ExtResource("2_64fxx")])
 metadata/_custom_type_script = "uid://cfacgra7oj3tf"
