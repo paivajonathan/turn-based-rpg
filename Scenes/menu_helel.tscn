@@ -85,9 +85,10 @@ color = Color(0.545098, 0.294118, 0.0117647, 0.415686)
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 0
 offset_left = 4.0
-offset_top = 165.0
-offset_right = 123.0
-offset_bottom = 316.0
+offset_top = 400.0
+offset_right = 151.0
+offset_bottom = 514.0
+scale = Vector2(2, 2)
 
 [node name="ButtonJogar" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
@@ -116,11 +117,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -158.0
-offset_top = -25.0
-offset_right = 161.0
-offset_bottom = 101.0
+offset_left = -329.0
+offset_top = -43.0
+offset_right = -10.0
+offset_bottom = 83.0
 grow_horizontal = 2
+scale = Vector2(2, 2)
 theme = ExtResource("3_h28r0")
 theme_type_variation = &"HeaderLarge"
 theme_override_fonts/font = ExtResource("4_jy6fv")
