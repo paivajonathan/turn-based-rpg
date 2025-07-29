@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cfacgra7oj3tf" path="res://Scripts/dialogue.gd" id="1_rvy15"]
 [ext_resource type="Resource" uid="uid://oqolylhkuqf" path="res://Data/Dialogue/1.tres" id="2_64fxx"]
-[ext_resource type="Texture2D" uid="uid://lk0wet7k216x" path="res://Art/dialogue/npcGirl.png" id="3_mlj8w"]
+[ext_resource type="Texture2D" uid="uid://c0uvkdcna6s8n" path="res://Art/dialogue/npcGirl.png" id="3_mlj8w"]
 
 [resource]
 script = ExtResource("1_rvy15")
