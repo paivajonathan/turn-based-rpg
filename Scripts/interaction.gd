@@ -5,9 +5,11 @@ var can_interact = false:
 		can_interact = value
 		%Label.visible = value
 
+func _on_ready():
+	%Label.visible = false
+
 func _on_body_entered(body: Node2D) -> void:
 	can_interact = true
-
 
 func _on_body_exited(body: Node2D) -> void:
 	can_interact = false
