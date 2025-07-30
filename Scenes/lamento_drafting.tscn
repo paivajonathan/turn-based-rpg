@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfkdxr1jvh2sr"]
+[gd_scene load_steps=5 format=3 uid="uid://dfkdxr1jvh2sr"]
 
 [ext_resource type="Script" uid="uid://bjj0dk0qfsnyn" path="res://lamento_drafting.gd" id="1_1pyty"]
 [ext_resource type="Texture2D" uid="uid://x1kglo0ton5s" path="res://Art/anjo_sprite/spr_lamento0.png" id="2_tig2u"]
 [ext_resource type="FontFile" uid="uid://kvrnkau14mt4" path="res://font/Metropolitan.ttf" id="3_m7eub"]
+[ext_resource type="AudioStream" uid="uid://cfruvtpwsfod7" path="res://music/sfx/evil-bell.mp3" id="4_tig2u"]
 
 [node name="LamentoDrafting" type="CanvasLayer"]
 script = ExtResource("1_1pyty")
@@ -48,3 +49,6 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_m7eub")
 theme_override_font_sizes/font_size = 30
 text = "IMPLORAR"
+
+[node name="bell_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_tig2u")

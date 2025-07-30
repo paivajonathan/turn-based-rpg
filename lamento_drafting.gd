@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var label = $Label
 @onready var button = $Button
 @onready var spr_anjo = $SprLamento
+@onready var bell_sfx = $bell_sfx
 
 var sorte_gerada = false
 
@@ -11,6 +12,7 @@ func _ready():
 
 func _on_button_pressed():
 	if not sorte_gerada:
+		bell_sfx.play(0.15)
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
 		Globals.npc_threshold = rng.randi_range(1, 20)
@@ -27,4 +29,6 @@ func _on_button_pressed():
 		spr_anjo.texture = load("res://Art/anjo_sprite/spr_lamento1.png")
 	else:
 		# Troca para cena da batalha
+		bell_sfx.stream = load("res://music/sfx/click.mp3")
+		bell_sfx.play(0.05)
 		TransitionHandler.fade_out(get_tree().current_scene, "res://Scenes/battle.tscn", .8, Color.FIREBRICK)
