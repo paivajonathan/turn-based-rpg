@@ -85,9 +85,9 @@ color = Color(0.545098, 0.294118, 0.0117647, 0.415686)
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 0
 offset_left = 4.0
-offset_top = 400.0
+offset_top = 320.0
 offset_right = 151.0
-offset_bottom = 514.0
+offset_bottom = 469.0
 scale = Vector2(2, 2)
 
 [node name="ButtonJogar" type="Button" parent="Control/VBoxContainer"]
@@ -96,16 +96,15 @@ theme = ExtResource("3_h28r0")
 theme_override_fonts/font = ExtResource("4_jy6fv")
 text = "Jogar"
 
-[node name="ButtonOpcao" type="Button" parent="Control/VBoxContainer"]
-visible = false
-layout_mode = 2
-theme = ExtResource("3_h28r0")
-text = "Opções"
-
 [node name="ButtonSobre" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_h28r0")
 text = "Sobre"
+
+[node name="ButtonInstruções" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_h28r0")
+text = "Instruções"
 
 [node name="ButtonSair" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
@@ -140,8 +139,8 @@ volume_db = 3.0
 
 [connection signal="mouse_entered" from="Control/VBoxContainer/ButtonJogar" to="Control/texture_menu" method="_on_button_jogar_mouse_entered"]
 [connection signal="pressed" from="Control/VBoxContainer/ButtonJogar" to="Control/texture_menu" method="_on_button_jogar_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/ButtonOpcao" to="Control/texture_menu" method="_on_button_opcao_pressed"]
 [connection signal="mouse_entered" from="Control/VBoxContainer/ButtonSobre" to="Control/texture_menu" method="_on_button_sobre_mouse_entered"]
 [connection signal="pressed" from="Control/VBoxContainer/ButtonSobre" to="Control/texture_menu" method="_on_button_sobre_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/ButtonInstruções" to="Control/texture_menu" method="_on_button_opcao_pressed"]
 [connection signal="mouse_entered" from="Control/VBoxContainer/ButtonSair" to="Control/texture_menu" method="_on_button_sair_mouse_entered"]
 [connection signal="pressed" from="Control/VBoxContainer/ButtonSair" to="Control/texture_menu" method="_on_button_sair_pressed"]
