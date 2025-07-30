@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://c43cgr0iutut4"]
+[gd_scene load_steps=18 format=4 uid="uid://c43cgr0iutut4"]
 
 [ext_resource type="Texture2D" uid="uid://jv3bvihd6owy" path="res://Art/TileSet/tile_set.png" id="1_3jegu"]
 [ext_resource type="Script" uid="uid://cg7odsxc644f1" path="res://Scripts/tile_map_layer.gd" id="2_gopxi"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://75ag25fuosvt" path="res://Art/spr_ofanim.png" id="5_i0yt5"]
 [ext_resource type="Script" uid="uid://cxpsc43t316np" path="res://Scripts/enemy_sprite_tilemap.gd" id="6_i0yt5"]
 [ext_resource type="PackedScene" uid="uid://clcbg2v00emqx" path="res://Scenes/npc.tscn" id="7_eroag"]
+[ext_resource type="AudioStream" uid="uid://candxtf6ciuvb" path="res://music/sfx/angel-ahh.wav" id="8_kxjbr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k42st"]
 texture = ExtResource("1_3jegu")
@@ -147,6 +148,9 @@ position = Vector2(111, 406)
 position = Vector2(107.5, -27.5)
 zoom = Vector2(1.5, 1.5)
 
+[node name="AudioListener2D" type="AudioListener2D" parent="Player"]
+current = true
+
 [node name="Enemy_tilemap" type="Area2D" parent="."]
 z_index = 1
 y_sort_enabled = true
@@ -168,9 +172,14 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_tilemap"]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(83, -98)
+position = Vector2(84, -99)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_eroag")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Enemy_tilemap"]
+position = Vector2(80, -132)
+stream = ExtResource("8_kxjbr")
+attenuation = 5.65685
 
 [node name="Npc" parent="." instance=ExtResource("7_eroag")]
 z_index = 0

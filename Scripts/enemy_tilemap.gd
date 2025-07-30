@@ -4,7 +4,11 @@ extends Area2D
 @onready var collide_sfx = preload("res://music/sfx/angel-tilemap-collision.mp3")
 @onready var player = AudioStreamPlayer.new()
 
+@onready var angel = $AudioStreamPlayer2D
+
 func _ready():
+	angel.play()
+	
 	player.stream = collide_sfx
 	add_child(player)
 	connect("body_entered", Callable(self, "_on_body_entered"))
