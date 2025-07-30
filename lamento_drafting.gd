@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var button = $Button
 @onready var spr_anjo = $SprLamento
 @onready var bell_sfx = $bell_sfx
+@onready var hover_sfx = $hover_sfx
 
 var sorte_gerada = false
 
@@ -32,3 +33,8 @@ func _on_button_pressed():
 		bell_sfx.stream = load("res://music/sfx/click.mp3")
 		bell_sfx.play(0.05)
 		TransitionHandler.fade_out(get_tree().current_scene, "res://Scenes/battle.tscn", .8, Color.FIREBRICK)
+
+
+func _on_button_mouse_entered() -> void:
+	hover_sfx.play(0.11)
+	
