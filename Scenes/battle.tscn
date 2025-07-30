@@ -106,6 +106,7 @@ layout_mode = 2
 data = ExtResource("6_dw4jg")
 
 [node name="GameOverLabel" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

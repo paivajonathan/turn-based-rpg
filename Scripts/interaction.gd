@@ -6,10 +6,12 @@ var can_interact = false:
 		%Label.visible = value
 
 func _on_ready():
-	%Label.visible = false
+	can_interact = false
 
 func _on_body_entered(body: Node2D) -> void:
-	can_interact = true
+	# Evento deve ocorrer somente se o Player triggar
+	if body.name == "Player":
+		can_interact = true
 
 func _on_body_exited(body: Node2D) -> void:
 	can_interact = false
@@ -21,4 +23,3 @@ func interaction():
 func _input(event):
 	if event.is_action_pressed("interact") and can_interact:
 		interaction()
-		
