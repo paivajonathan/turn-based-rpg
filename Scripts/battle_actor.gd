@@ -32,7 +32,7 @@ func healhurt(value: int, is_npc: bool = false) -> void:
 	
 	var ataque_valido := false
 	if is_npc:
-		var npc_threshold = self.ca
+		var npc_threshold = Globals.npc_threshold if Globals.npc_threshold > 0 else self.ca
 		print("NPC rolou: %d (precisa ser maior ou igual a %d)" % [coeficiente, npc_threshold])
 		Globals.log_message("NPC rolou: %d (precisa ser maior ou igual a %d)" % [coeficiente, npc_threshold])
 		if coeficiente >= npc_threshold:

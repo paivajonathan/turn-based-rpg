@@ -20,4 +20,4 @@ func _on_button_pressed():
 		sorte_gerada = true
 	else:
 		# Troca para cena da batalha
-		get_tree().change_scene_to_file("res://battle.tscn")
+		get_tree().change_scene_to_file("res://Scenes/battle.tscn")

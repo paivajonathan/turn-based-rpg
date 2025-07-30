@@ -26,14 +26,16 @@ func _ready() -> void:
 	Data.setup_party()
 	setup_enemy_buttons()
 	
-	# Rolar a CA antes da batalha
-	var rng = RandomNumberGenerator.new()
-	var draft_roll = rng.randi_range(1, 20)
-	for actor in Data.party:
-		actor.ca = draft_roll
-	player_windows.update_all()
+	# Usar o valor sorteado na tela anterior como CA do player
+	if Globals.npc_threshold > 0:
+		for actor in Data.party:
+			actor.ca = Globals.npc_threshold
+	else:
+		# fallback caso não tenha passado nada do Drafting
+		for actor in Data.party:
+			actor.ca = actor.ca
 
-	
+	player_windows.update_all()
 	goto_next_player()
 
 func setup_enemy_buttons() -> void:
