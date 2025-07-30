@@ -30,6 +30,8 @@ text = "ANJO DA LAMENTAÇÃO, QUAL A MINHA SORTE?"
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0.291087, 0.120191, 1)
 anchors_preset = -1
 anchor_left = 0.45
 anchor_top = 0.808
