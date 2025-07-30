@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=3 uid="uid://c7su6gdonc7ee"]
+
+[ext_resource type="Texture2D" uid="uid://datukiuyxy3my" path="res://Art/helelBg.png" id="1_0erp1"]
+[ext_resource type="Script" uid="uid://c2hd1ld1y3iqr" path="res://Scripts/about_menu.gd" id="2_rhot8"]
+[ext_resource type="Theme" uid="uid://dupwm4k1lvh6a" path="res://font/hele_theme.tres" id="3_ios13"]
+[ext_resource type="AudioStream" uid="uid://xc0ml2ihig8i" path="res://music/sfx/click.mp3" id="4_tsdpd"]
+[ext_resource type="AudioStream" uid="uid://d2dhgc6h31ack" path="res://music/sfx/hover.mp3" id="5_30bar"]
+
+[sub_resource type="Animation" id="Animation_ewp1v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_em0u6"]
+resource_name = "loop"
+length = 20.0
+loop_mode = 1
+step = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-150, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ewp1v"]
+_data = {
+&"RESET": SubResource("Animation_ewp1v"),
+&"loop": SubResource("Animation_em0u6")
+}
+
+[node name="CanvasGroup" type="CanvasGroup"]
+scale = Vector2(3, 3)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 321.0
+offset_bottom = 321.0
+
+[node name="texture_menu" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 160.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0erp1")
+expand_mode = 3
+script = ExtResource("2_rhot8")
+
+[node name="AnimationMenu" type="AnimationPlayer" parent="Control/texture_menu"]
+libraries = {
+&"": SubResource("AnimationLibrary_ewp1v")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.545098, 0.294118, 0.0117647, 0.415686)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 175.0
+offset_right = 126.0
+offset_bottom = 207.0
+
+[node name="ButtonVoltar" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_ios13")
+text = "Voltar"
+
+[node name="BoxContainer" type="BoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 9.0
+offset_right = 202.0
+offset_bottom = 145.0
+
+[node name="TextureRect" type="ColorRect" parent="Control/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 0.619608)
+
+[node name="Label" type="Label" parent="Control/BoxContainer/TextureRect"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 301.0
+offset_bottom = 233.0
+theme_override_font_sizes/font_size = 10
+text = "Setas - Movimentação
+Z - Interação com NPC
+X - Reinício do gamemap
+Esc - Sair do jogo
+Enter - Ação
+"
+
+[node name="sfx_click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_tsdpd")
+volume_db = 7.518
+
+[node name="sfx_hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_30bar")
+volume_db = 3.0
+
+[connection signal="mouse_entered" from="Control/VBoxContainer/ButtonVoltar" to="Control/texture_menu" method="_on_button_voltar_mouse_entered"]
+[connection signal="pressed" from="Control/VBoxContainer/ButtonVoltar" to="Control/texture_menu" method="_on_button_voltar_pressed"]

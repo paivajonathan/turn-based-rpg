@@ -18,6 +18,11 @@ func _on_button_sobre_pressed() -> void:
 	sfx_click.play(0.05)
 	await sfx_click.finished
 	get_tree().change_scene_to_file("res://Scenes/menu_about.tscn")
+	
+func _on_button_instruções_pressed() -> void:
+	sfx_click.play(0.05)
+	await sfx_click.finished
+	get_tree().change_scene_to_file("res://Scenes/menu_instructions.tscn")
 
 func _on_button_sair_pressed() -> void:
 	sfx_click.play(0.05)
@@ -31,4 +36,7 @@ func _on_button_sobre_mouse_entered() -> void:
 	sfx_hover.play(0.11)
 
 func _on_button_sair_mouse_entered() -> void:
+	sfx_hover.play(0.11)
+
+func _on_button_instruções_mouse_entered() -> void:
 	sfx_hover.play(0.11)

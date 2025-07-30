@@ -141,6 +141,7 @@ volume_db = 3.0
 [connection signal="pressed" from="Control/VBoxContainer/ButtonJogar" to="Control/texture_menu" method="_on_button_jogar_pressed"]
 [connection signal="mouse_entered" from="Control/VBoxContainer/ButtonSobre" to="Control/texture_menu" method="_on_button_sobre_mouse_entered"]
 [connection signal="pressed" from="Control/VBoxContainer/ButtonSobre" to="Control/texture_menu" method="_on_button_sobre_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/ButtonInstruções" to="Control/texture_menu" method="_on_button_opcao_pressed"]
+[connection signal="mouse_entered" from="Control/VBoxContainer/ButtonInstruções" to="Control/texture_menu" method="_on_button_instruções_mouse_entered"]
+[connection signal="pressed" from="Control/VBoxContainer/ButtonInstruções" to="Control/texture_menu" method="_on_button_instruções_pressed"]
 [connection signal="mouse_entered" from="Control/VBoxContainer/ButtonSair" to="Control/texture_menu" method="_on_button_sair_mouse_entered"]
 [connection signal="pressed" from="Control/VBoxContainer/ButtonSair" to="Control/texture_menu" method="_on_button_sair_pressed"]
